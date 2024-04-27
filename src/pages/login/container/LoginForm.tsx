@@ -4,32 +4,30 @@ import { FormProvider, useForm } from 'react-hook-form';
 import Button from '@/components/buttons/Button';
 import Input from '@/components/forms/Input';
 
-type LoginForm = {
-  email: string;
-  password: string;
-};
+import { LoginFormType, useLoginMutation } from '@/pages/login/hooks/mutation';
 
 export default function LoginForm() {
-  const methods = useForm<LoginForm>({
+  const methods = useForm<LoginFormType>({
     mode: 'onTouched',
   });
 
   const { handleSubmit } = methods;
 
-  const onSubmit = (data: LoginForm) => {
-    // eslint-disable-next-line no-console
-    console.log(data);
+  const { handleLogin, isLoading } = useLoginMutation();
+
+  const onSubmit = (data: LoginFormType) => {
+    handleLogin(data);
   };
 
   return (
     <FormProvider {...methods}>
       <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-3'>
         <Input
-          id='email'
-          label='Email'
-          placeholder='Masukkan Email'
+          id='username'
+          label='Username'
+          placeholder='Masukkan Username'
           validation={{
-            required: 'Email tidak boleh kosong!',
+            required: 'Username tidak boleh kosong!',
           }}
         />
         <Input
@@ -41,8 +39,13 @@ export default function LoginForm() {
             required: 'Password tidak boleh kosong!',
           }}
         />
-        <Button type='submit' variant='primary' className='w-full'>
-          Login
+        <Button
+          type='submit'
+          variant='primary'
+          className='w-full'
+          isLoading={isLoading}
+        >
+          Masuk
         </Button>
       </form>
     </FormProvider>
