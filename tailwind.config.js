@@ -11,6 +11,10 @@ module.exports = {
         averta: ['AvertaStd', ...fontFamily.sans],
       },
       colors: {
+        custom: {
+          ijo: '#2c4c3c',
+          ijo_terang: '#abb7b1',
+        },
         primary: {
           50: 'rgb(var(--tw-color-primary-50) / <alpha-value>)',
           //* Background

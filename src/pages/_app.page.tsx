@@ -9,6 +9,7 @@ import nProgress from 'nprogress';
 
 import '@/styles/nprogress.css';
 import '@/styles/globals.css';
+import '@/styles/calendar.css';
 
 import api from '@/lib/axios';
 

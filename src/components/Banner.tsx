@@ -9,7 +9,6 @@ import clsxm from '@/lib/clsxm';
 import { BANNER_CONTENT } from '@/lib/content/banner';
 
 import IconButton from '@/components/buttons/IconButton';
-import Typography from '@/components/typography/Typography';
 
 type BannerProps = React.ComponentPropsWithoutRef<'div'>;
 
@@ -53,20 +52,14 @@ export default function Banner({ className, ...rest }: BannerProps) {
 
   return (
     <div
-      className={clsxm(
-        'flex items-center bg-primary-100 py-3',
-        'min-h-[4rem]',
-        className,
-      )}
+      className={clsxm('flex items-center py-3', 'min-h-[4rem]', className)}
       {...rest}
     >
-      <div className='sm:layout max-w-full px-8 sm:px-0'>
+      <div className='sm:layout max-w-half px-8 sm:px-0'>
         <Slider {...settings}>
           {BANNER_CONTENT.map((content, index) => (
             <div key={index} className='text-center'>
-              <Typography variant='b3' font='averta'>
-                {content()}
-              </Typography>
+              {content()}
             </div>
           ))}
         </Slider>
