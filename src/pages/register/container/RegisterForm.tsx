@@ -3,34 +3,31 @@ import { FormProvider, useForm } from 'react-hook-form';
 
 import Button from '@/components/buttons/Button';
 import Input from '@/components/forms/Input';
-import TextArea from '@/components/forms/TextArea';
 
 import REGEX from '@/constant/regex';
-
-type RegisterForm = {
-  username: string;
-  name: string;
-  email: string;
-  password: string;
-};
+import {
+  RegisterFormType,
+  useRegisterMutation,
+} from '@/pages/register/hooks/mutation';
 
 export default function RegisterForm() {
-  const methods = useForm<RegisterForm>({
+  const methods = useForm<RegisterFormType>({
     mode: 'onTouched',
   });
 
   const { handleSubmit } = methods;
 
-  const onSubmit = (data: RegisterForm) => {
-    // eslint-disable-next-line no-console
-    console.log(data);
+  const { handleRegister, isLoading } = useRegisterMutation();
+
+  const onSubmit = (data: RegisterFormType) => {
+    handleRegister(data);
   };
 
   return (
     <FormProvider {...methods}>
       <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-3'>
         <Input
-          id='name'
+          id='nama'
           label='Nama'
           placeholder='Masukkan Nama'
           validation={{
@@ -76,16 +73,16 @@ export default function RegisterForm() {
           }}
           helperText='Password terdiri atas minimal 8 karakter, satu huruf besar, satu huruf kecil, satu angka, dan satu karakter spesial.'
         />
-        <TextArea
-          id='bio'
-          label='Biodata'
-          placeholder='Masukkan Biodata'
+        <Input
+          id='biodata'
+          label='Tempat dan Tanggal Lahir'
+          placeholder='Masukkan tempat dan tanggal lahir'
           validation={{
             required: 'Biodata tidak boleh kosong!',
           }}
         />
         <Input
-          id='notelp'
+          id='notelpon'
           label='Nomor Telepon'
           placeholder='Masukkan Nomor Telepon'
           validation={{
@@ -97,7 +94,12 @@ export default function RegisterForm() {
           }}
           helperText='Contoh: 6281234567890'
         />
-        <Button type='submit' variant='primary' className='w-full'>
+        <Button
+          type='submit'
+          variant='primary'
+          className='w-full'
+          isLoading={isLoading}
+        >
           Daftar
         </Button>
       </form>
