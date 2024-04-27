@@ -30,6 +30,7 @@ const TypographyColor = [
   'tertiary',
   'danger',
   'white',
+  'hover:white',
 ] as const;
 const TypographyFont = ['averta', 'inter'] as const;
 
