@@ -11,10 +11,6 @@ module.exports = {
         averta: ['AvertaStd', ...fontFamily.sans],
       },
       colors: {
-        custom: {
-          ijo: '#2c4c3c',
-          ijo_terang: '#abb7b1',
-        },
         primary: {
           50: 'rgb(var(--tw-color-primary-50) / <alpha-value>)',
           //* Background
@@ -33,21 +29,21 @@ module.exports = {
           900: 'rgb(var(--tw-color-primary-900) / <alpha-value>)',
         },
         secondary: {
-          50: '#EFF9F8',
+          50: '#EAECEB',
           //* Background
-          100: '#E8F4F3',
-          200: '#E0F3F1',
+          100: '#E5E8E6',
+          200: '#CBD0CD',
           //* Complement
-          300: '#D0EDEB',
-          400: '#A2DBD7',
+          300: '#B1B9B5',
+          400: '#97A19C',
           //* Default
-          500: '#40A69F',
+          500: '#7D8A83',
           //* Hovered
-          600: '#3B9993',
+          600: '#646E69',
           //* Active
-          700: '#2F7A75',
-          800: '#235C58',
-          900: '#173D3A',
+          700: '#4B534F',
+          800: '#323734',
+          900: '#191C1A',
         },
         typo: {
           DEFAULT: '#1F1F1F',
