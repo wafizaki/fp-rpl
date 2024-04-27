@@ -22,9 +22,9 @@ export default function HomePage() {
   return (
     <Layout>
       <Seo templateTitle='Dashboard' />
-      <main>
-        <section className='bg-gray-100 relative flex min-h-screen flex-row items-center justify-between text-center'>
-          <div className='bg-custom-ijo min-h-screen w-[15%] m-8 rounded-3xl flex flex-col justify-start sticky'>
+      <main className='bg-gray-100'>
+        <section className='relative flex min-h-screen flex-row items-center justify-between text-center'>
+          <div className='bg-primary-500 min-h-screen w-[15%] m-8 rounded-3xl flex flex-col justify-start sticky'>
             <Typography
               variant='j2'
               color='white'
@@ -33,25 +33,25 @@ export default function HomePage() {
               <IoMdBook size='40px' className='mx-2' />
               TeachOur
             </Typography>
-            <div className='flex flex-row items-center justify-start mx-8 my-2 rounded-full text-white p-4 hover:bg-custom-ijo_terang'>
+            <div className='flex flex-row items-center justify-start mx-8 my-2 rounded-full text-white p-4 hover:bg-primary-300'>
               <RxDashboard size='28px' className='mx-2' />
               <Typography variant='h3' color='white'>
                 Dashboard
               </Typography>
             </div>
-            <div className='flex flex-row items-center justify-start mx-8 my-2 rounded-full text-white p-4 hover:bg-custom-ijo_terang'>
+            <div className='flex flex-row items-center justify-start mx-8 my-2 rounded-full text-white p-4 hover:bg-primary-300'>
               <FaClipboardList size='28px' className='mx-2' />
               <Typography variant='h3' color='white'>
                 My Courses
               </Typography>
             </div>
-            <div className='flex flex-row items-center justify-start mx-8 my-2 rounded-full text-white p-4 hover:bg-custom-ijo_terang'>
+            <div className='flex flex-row items-center justify-start mx-8 my-2 rounded-full text-white p-4 hover:bg-primary-300'>
               <MdClass size='28px' className='mx-2' />
               <Typography variant='h3' color='white'>
                 My Assignments
               </Typography>
             </div>
-            <div className='flex flex-row items-center justify-start mx-8 my-2 rounded-full p-4 text-white hover:bg-custom-ijo_terang'>
+            <div className='flex flex-row items-center justify-start mx-8 my-2 rounded-full p-4 text-white hover:bg-primary-300'>
               <RiMessage2Fill
                 size='28px'
                 className='mx-2'
@@ -61,13 +61,13 @@ export default function HomePage() {
                 Messages
               </Typography>
             </div>
-            <div className='flex flex-row items-center justify-start mx-8 my-2 rounded-full p-4 text-white hover:bg-custom-ijo_terang'>
+            <div className='flex flex-row items-center justify-start mx-8 my-2 rounded-full p-4 text-white hover:bg-primary-300'>
               <FaRegBell size='28px' className='mx-2' color='hover:white' />
               <Typography variant='h3' color='white'>
                 Notifications
               </Typography>
             </div>
-            <div className='flex flex-row items-center justify-start mx-8 my-2 rounded-full p-4 text-white hover:bg-custom-ijo_terang'>
+            <div className='flex flex-row items-center justify-start mx-8 my-2 rounded-full p-4 text-white hover:bg-primary-300'>
               <FaRegCalendarAlt
                 size='28px'
                 className='mx-2'
@@ -77,7 +77,7 @@ export default function HomePage() {
                 Calendars
               </Typography>
             </div>
-            <div className='flex flex-row items-center justify-start mx-8 my-2 rounded-full p-4 text-white hover:bg-custom-ijo_terang'>
+            <div className='flex flex-row items-center justify-start mx-8 my-2 rounded-full p-4 text-white hover:bg-primary-300'>
               <IoSettingsOutline
                 size='28px'
                 className='mx-2'
@@ -537,7 +537,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className='min-h-screen w-[25%] ounded-3xl flex flex-col justify-between'>
-            <div className='bg-custom-ijo py-4 flex justify-center flex-col rounded-3xl shadow-md'>
+            <div className='bg-primary-500 py-4 flex justify-center flex-col rounded-3xl shadow-md'>
               <Calendar
                 tileClassName={highlightToday}
                 prev2Label={null}
@@ -790,10 +790,11 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-          <footer className='absolute bottom-0 text-gray-700 justify-center w-full'>
-            © {new Date().getFullYear()} By Team 3 RPL
-          </footer>
         </section>
+
+        <footer className='text-gray-700 text-center w-full'>
+          © {new Date().getFullYear()} By Team 3 RPL
+        </footer>
       </main>
     </Layout>
   );
