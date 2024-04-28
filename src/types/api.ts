@@ -1,10 +1,13 @@
 export type ApiResponse<T> = {
-  code: string;
+  success: boolean;
+  message: string;
   data: T;
 };
 
 export type ApiError = {
+  success: boolean;
   message: string;
+  errors: Record<string, string[]>;
 };
 
 export type UninterceptedApiError = {
